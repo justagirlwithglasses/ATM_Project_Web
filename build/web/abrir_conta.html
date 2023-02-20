@@ -4,21 +4,91 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
 -->
 <html>
+    
     <head>
-        <title>Abrir Conta</title>
+        
+        <title> Abrir Conta </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<style>
+            
+		body 
+                {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+		}
+
+		form 
+                {
+			background-color: #fff;
+			max-width: 500px;
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+		}
+
+		label 
+                {
+			display: block;
+			margin-bottom: 8px;
+		}
+
+		input[type="text"],
+		input[type="number"],
+		select 
+                {
+			padding: 8px;
+			width: 100%;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+			margin-bottom: 20px;
+		}
+
+		button 
+                {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 8px 16px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		button:hover 
+                {
+			background-color: #45a049;
+		}
+                
+	</style>
+        
     </head>
-    <body>
-        <div>Abrir Conta</div>
+    
+    <body>    
+    
+        <div> Abrir Conta </div>
         
-         <form action="ATMController">
-            
-            <input type="text" name="ID_Conta" placeholder="ID">
-            <input type="text" name="saldo" placeholder="Saldo Conta">
-            <input type="submit" value="Abrir Conta">
-            
-        </form>
+	<form action="ATMController">
         
+            <h2> Abrir Conta do Cliente </h2>
+
+            <label for="num_conta"> Número da Conta: </label>
+            <input type="text" id="num_conta" name="num_conta" placeholder="Insira o Número da Conta" required>
+         
+            <label for="tipo_conta"> Tipo de Conta: </label>
+            <select id="tipo_conta" name="tipo_conta">
+                    <option value="corrente"> Corrente </option>
+                    <option value="poupança"> Poupança </option>
+            </select>
+            
+            <label for="saldo_conta"> Saldo Conta: </label>
+            <input type="number" id="saldo_conta" name="saldo_conta" placeholder="Insira o Saldo da Conta" required> €
+            
+            <button type="submit"> Criar Conta </button>
+            
+	</form>
+    
     </body>
+    
 </html>

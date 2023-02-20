@@ -7,10 +7,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     
     <head>
         
-        <title> Abrir Conta </title>
+        <title> Criar Cartão de Cliente </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+	
 	<style>
             
 		body 
@@ -36,6 +36,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 
 		input[type="text"],
 		input[type="number"],
+		input[type="date"],
 		select 
                 {
 			padding: 8px;
@@ -64,31 +65,37 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 	</style>
         
     </head>
-    
-    <body>    
-    
-        <div> Abrir Conta </div>
-        
-	<form action="ATMController">
-        
-            <h2> Abrir Conta do Cliente </h2>
 
-            <label for="num_conta"> Número da Conta: </label>
-            <input type="text" id="num_conta" name="num_conta" placeholder="Insira o Número da Conta" required>
-         
-            <label for="tipo_conta"> Tipo de Conta: </label>
-            <select id="tipo_conta" name="tipo_conta">
-                    <option value="corrente"> Corrente </option>
-                    <option value="poupança"> Poupança </option>
+    <body>
+        
+         <div> Criar Cartão de Cliente </div>
+        
+        <form action="ATMController">
+        
+            <h2> Criar Cartão de Cliente </h2>
+            
+            <label for="num_cartao"> Número do Cartão: </label>
+            <input type="text" id="num_cartao" name="num_cartao" placeholder="Insira o Número do Cartão" required>
+            
+            <label for="data_val"> Data de Validade: </label>
+            <input type="date" id="data_val" name="data_val" required>
+            
+            <label for="tipo_cartao"> Tipo de Cartão: </label>
+            <select id="tipo_cartao" name="tipo_cartao">
+                    <option value="debito"> Débito </option>
+                    <option value="credito"> Crédito </option>
             </select>
             
-            <label for="saldo_conta"> Saldo Conta: </label>
-            <input type="number" id="saldo_conta" name="saldo_conta" placeholder="Insira o Saldo da Conta" required> €
+            <label for="nome_titular"> Nome do Titular: </label>
+            <input type="text" id="nome_titular" name="nome_titular" placeholder="Insira o Nome do Titular" required>
             
-            <button type="submit"> Criar Conta </button>
+            <label for="cod_seg"> Código de Segurança: </label>
+            <input type="text" id="cod_seg" name="cod_seg" placeholder="Insira o Código de Segurança" size="3" maxlength="3" required>
             
+            <button type="submit"> Criar Cartão </button>
+                
 	</form>
-    
+        
     </body>
-    
+
 </html>

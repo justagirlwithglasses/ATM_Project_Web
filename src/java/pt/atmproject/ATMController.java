@@ -5,6 +5,8 @@
 package pt.atmproject;
 
 import atmproject.model.Cliente;
+//import atmproject.model.Conta;
+//import atmproject.model.Cartao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -46,11 +48,32 @@ public class ATMController extends HttpServlet {
             request.getParameter("senha")
         
         );
+     
+         
+         //Form Abrir Conta
         
+         Conta novaconta = new Conta
+        (
+
+            request.getParameter("num_conta"),
+            request.getParameter("tipo_conta"),
+            request.getParameter("saldo_conta")
         
-        //Form Abrir Conta 
+        );
         
+                
+        //Form Criar Cartão
         
+         Cartao novocartao = new Cartao
+        (
+
+            request.getParameter("num_cartao"),
+            request.getParameter("data_val"),
+            request.getParameter("tipo_cartao"),
+            request.getParameter("nome_titular"),
+            request.getParameter("cod_seg")
+        
+        );
                 
                 
                 
@@ -63,7 +86,9 @@ public class ATMController extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             //out.println("<h1>Servlet ATMController at " + request.getContextPath() + "</h1>");
-            out.println("Novo Cliente " + novocliente);
+            out.println("Novo Cliente: " + novocliente);
+            out.println("Nova Conta: " + novaconta); 
+            out.println("Novo Cartão: " + novocartao);
             out.println("</body>");
             out.println("</html>");
         }
