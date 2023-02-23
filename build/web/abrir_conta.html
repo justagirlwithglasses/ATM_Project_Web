@@ -66,8 +66,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     </head>
     
     <body>    
-    
-        <div> Abrir Conta </div>
         
 	<form action="ATMController">
         
@@ -83,7 +81,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             </select>
             
             <label for="saldo_conta"> Saldo Conta: </label>
-            <input type="number" id="saldo_conta" name="saldo_conta" placeholder="Insira o Saldo da Conta" required> €
+            <input type="number" id="saldo_conta" name="saldo_conta" placeholder="Insira o Saldo da Conta" step="0.01" required>
             
             <button type="submit"> Criar Conta </button>
             
