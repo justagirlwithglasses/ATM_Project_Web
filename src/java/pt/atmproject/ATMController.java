@@ -5,8 +5,8 @@
 package pt.atmproject;
 
 import atmproject.model.Cliente;
-//import atmproject.model.Conta;
-//import atmproject.model.Cartao;
+import atmproject.model.Conta;
+import atmproject.model.Cartao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -55,9 +55,9 @@ public class ATMController extends HttpServlet {
          Conta novaconta = new Conta
         (
 
-            request.getParameter("num_conta"),
-            request.getParameter("tipo_conta"),
-            request.getParameter("saldo_conta")
+            Integer.parseInt(request.getParameter("num_conta")),
+            Double.parseDouble(request.getParameter("saldo_conta")),
+            Conta.Tipo_Conta.valueOf(request.getParameter("tipo_conta"))
         
         );
         
@@ -69,9 +69,9 @@ public class ATMController extends HttpServlet {
 
             request.getParameter("num_cartao"),
             request.getParameter("data_val"),
-            request.getParameter("tipo_cartao"),
-            request.getParameter("nome_titular"),
-            request.getParameter("cod_seg")
+            Cartao.Tipo_Cartao.valueOf(request.getParameter("tipo_cartao")),
+            request.getParameter("nome_titular"), 
+            Integer.parseInt(request.getParameter("cod_seg"))
         
         );
                 
