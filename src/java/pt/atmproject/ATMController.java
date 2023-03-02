@@ -6,6 +6,7 @@ import atmproject.model.Conta;
 import atmproject.model.Cartao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,11 +22,14 @@ public class ATMController extends HttpServlet
     //@EJB(lookup = "java:global/ATM_Project!atmproject.model.Servicos");
     //Servicos servicos;
     
+    @EJB ATMEJB atmejb;
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
         Object resultado = null;
+        String paginaseguinte = null;
         
         String servico = request.getParameter("servico");
                 
@@ -49,10 +53,12 @@ public class ATMController extends HttpServlet
 
                  );
                  
-                 Database.criar_cliente(novocliente);
+                 //Database.criar_cliente(novocliente);
+                 Cliente cliente = atmejb.criar_cliente(novocliente);
                  
-                
-                 resultado = novocliente;
+                 request.getSession().setAttribute("novocliente", cliente);
+                                 
+                 paginaseguinte = "abrir_conta.jsp";
                  
                 break;
             
@@ -72,10 +78,12 @@ public class ATMController extends HttpServlet
 
                );
                 
-                Database.abrir_conta(novaconta);
+                //Database.abrir_conta(novaconta);
                 
                 
                 resultado = novaconta;
+                
+                 paginaseguinte = "criar_cartao.html";
                 
                  break;
             }
@@ -108,9 +116,9 @@ public class ATMController extends HttpServlet
                 
    
                 
-                
+       /*         
         try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -125,6 +133,9 @@ public class ATMController extends HttpServlet
             out.println("</body>");
             out.println("</html>");
         }
+        */
+       
+       response.sendRedirect(paginaseguinte);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

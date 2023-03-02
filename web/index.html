@@ -10,9 +10,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <title> Login </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
    
         <style>
 
+            
                     body 
                     {
                             font-family: Arial, sans-serif;
@@ -58,28 +60,43 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                     button:hover 
                     {
                             background-color: #45a049;
-                    }
-
+                    } 
+                    
+                    
+           
         </style>
     
     </head>
     
     <body>
         
-        <form action="ATMController">            
+        <form action="ATMController">     
+            
+            <div class="container" onclick="onclick">
+               
+                <div class="top"></div>  
+                
+                <div class="bottom"></div> 
+                    
+                    <div class="center">
 	
-            <h2> Login </h2>
-            
-            <label for="NIF"> NIF: </label>
-            <input type="text" id="NIF" name="NIF" placeholder="NIF" required>
-            
-            <label for="senha"> Password: </label>
-            <input type="password" id="senha" name="senha" placeholder="Senha" required>
-            
-            <button type="submit"> Login </button>
+                        <h2> Login </h2>
+
+                        <label for="NIF"> NIF: </label>
+                        <input type="text" id="NIF" name="NIF" placeholder="NIF" required>
+
+                        <label for="senha"> Password: </label>
+                        <input type="password" id="senha" name="senha" placeholder="Senha" required>
+
+                        <button type="submit"> Login </button>
+                
+                    </div>    
+                
+            </div>
             
 	</form>
         
+   
     </body>
     
 </html>

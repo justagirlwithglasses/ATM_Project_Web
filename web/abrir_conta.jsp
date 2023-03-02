@@ -1,8 +1,7 @@
+<%@page pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
+
 <html>
     
     <head>
@@ -70,14 +69,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 	<form action="ATMController">
         
             <h2> Abrir Conta do Cliente </h2>
+            
+              
+	    <label for="nif"> NIF: </label>
+            <input type="text" id="nif" name="NIF" placeholder="Insira o NIF" value="${novocliente.nif}" disabled>
 
-            <label for="num_conta"> Número da Conta: </label>
-            <input type="text" id="num_conta" name="num_conta" placeholder="Insira o Número da Conta" required>
+            <label for="num_conta"> Numero da Conta: </label>
+            <input type="text" id="num_conta" name="num_conta" placeholder="Insira o Numero da Conta" required>
          
             <label for="tipo_conta"> Tipo de Conta: </label>
             <select id="tipo_conta" name="tipo_conta">
                     <option value="corrente"> Corrente </option>
-                    <option value="poupanca"> Poupança </option>
+                    <option value="poupanca"> Poupanca </option>
             </select>
             
             <label for="saldo_conta"> Saldo Conta: </label>
