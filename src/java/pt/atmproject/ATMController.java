@@ -79,11 +79,12 @@ public class ATMController extends HttpServlet
                );
                 
                 //Database.abrir_conta(novaconta);
+                      
+                Conta conta = atmejb.abrir_conta(novaconta);
                 
+                request.getSession().setAttribute("novaconta", conta);
                 
-                resultado = novaconta;
-                
-                 paginaseguinte = "criar_cartao.html";
+                 paginaseguinte = "criar_cartao.jsp";
                 
                  break;
             }

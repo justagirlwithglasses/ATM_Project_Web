@@ -30,12 +30,12 @@ public class ATMEJB
 
     
     public void depositar_dinheiro(String Num_Conta, String quant) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       
     }
 
     
     public void levantar_dinheiro(String Num_Conta, String quant) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       
     }
 
     
