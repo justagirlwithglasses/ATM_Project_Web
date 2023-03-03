@@ -84,7 +84,7 @@ public class ATMController extends HttpServlet
                 
                 request.getSession().setAttribute("novaconta", conta);
                 
-                 paginaseguinte = "criar_cartao.jsp";
+                paginaseguinte = "criar_cartao.jsp";
                 
                  break;
             }
@@ -105,10 +105,11 @@ public class ATMController extends HttpServlet
 
                    );
                     
-                    Database.criar_cartao(novocartao);
+                   Cartao cartao = atmejb.criar_cartao(novocartao);
+                   
+                   request.getSession().setAttribute("novocartao", cartao);
                     
-                    
-                   resultado = novocartao;
+                   paginaseguinte = "listar_info.jsp";
                     
                   break;
             }

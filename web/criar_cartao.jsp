@@ -75,7 +75,7 @@
             <input type="text" id="nif" name="NIF" placeholder="Insira o NIF" value="${novocliente.nif}" disabled>
 
             <label for="num_conta"> Numero da Conta: </label>
-            <input type="text" id="num_conta" name="num_conta" placeholder="Insira o Numero da Conta" value="${novaconta.numconta}" disabled>
+            <input type="text" id="num_conta" name="num_conta" placeholder="Insira o Numero da Conta" value="${novaconta.num_conta}" disabled>
             
             <label for="num_cartao"> Número do Cartão: </label>
             <input type="text" id="num_cartao" name="num_cartao" placeholder="Insira o Número do Cartão" required>

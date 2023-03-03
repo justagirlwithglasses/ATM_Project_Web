@@ -18,12 +18,12 @@ public class ATMEJB
         return Database.criar_cliente(cliente);
     }
 
-    public String abrir_conta(Conta conta) 
+    public Conta abrir_conta(Conta conta) 
     {
         return Database.abrir_conta(conta);
     }
 
-    public String criar_cartao(Cartao cartao) 
+    public Cartao criar_cartao(Cartao cartao) 
     {
         return Database.criar_cartao(cartao);
     }
