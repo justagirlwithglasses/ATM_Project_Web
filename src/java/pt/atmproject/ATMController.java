@@ -44,7 +44,7 @@ public class ATMController extends HttpServlet
                  Cliente novocliente = new Cliente
                  (
 
-                     request.getParameter("ID_cliente"),
+                     request.getParameter("Id_cliente"),
                      request.getParameter("nome"),
                      request.getParameter("NIF"),
                      request.getParameter("email"),
