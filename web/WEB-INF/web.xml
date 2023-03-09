@@ -42,8 +42,8 @@
                     <form-error-page>/WEB-INF/erro.jsp</form-error-page>
                 </form-login-config>     
             </login-config>
-            
-            
-       
+              
     </web-app>
+    
+<!-- Ficheiro de Configuração de todo o ATM Project Web -->
 

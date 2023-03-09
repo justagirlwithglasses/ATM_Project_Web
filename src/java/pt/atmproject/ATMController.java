@@ -1,11 +1,9 @@
 package pt.atmproject;
 
-import atmproject.data.Database;
 import atmproject.model.Cliente;
 import atmproject.model.Conta;
 import atmproject.model.Cartao;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,16 +17,15 @@ import javax.servlet.http.HttpServletResponse;
 public class ATMController extends HttpServlet 
 {
     
-    //@EJB(lookup = "java:global/ATM_Project!atmproject.model.Servicos");
-    //Servicos servicos;
+    // Injeção referente ao EJB da Aplicação
     
     @EJB ATMEJB atmejb;
     
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        Object resultado = null;
         String paginaseguinte = null;
         
         String servico = request.getParameter("servico");
@@ -53,7 +50,6 @@ public class ATMController extends HttpServlet
 
                  );
                  
-                 //Database.criar_cliente(novocliente);
                  Cliente cliente = atmejb.criar_cliente(novocliente);
                  
                  request.getSession().setAttribute("novocliente", cliente);
@@ -77,8 +73,6 @@ public class ATMController extends HttpServlet
                    Conta.Tipo_Conta.valueOf(request.getParameter("tipo_conta"))
 
                );
-                
-                //Database.abrir_conta(novaconta);
                       
                 Conta conta = atmejb.abrir_conta(novaconta);
                 
@@ -115,68 +109,7 @@ public class ATMController extends HttpServlet
             }
             
         }
-                
-   
-                
-       /*         
-        try ( PrintWriter out = response.getWriter()) {
-            
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ATMController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            //out.println("<h1>Servlet ATMController at " + request.getContextPath() + "</h1>");
-            //out.println("Novo Cliente: " + novocliente);
-            //out.println("Nova Conta: " + novaconta); 
-            //out.println("Novo Cartão: " + novocartao);
-            out.println("<p> "+resultado+" </p>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-        */
-       
+                       
        response.sendRedirect(paginaseguinte);
     }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
 }

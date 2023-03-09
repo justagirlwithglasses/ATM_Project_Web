@@ -4,8 +4,9 @@ import atmproject.data.Database;
 import atmproject.model.Cartao;
 import atmproject.model.Cliente;
 import atmproject.model.Conta;
-import atmproject.model.Servicos;
 import javax.ejb.Singleton;
+
+// EJB da Aplicação
 
 
 @Singleton

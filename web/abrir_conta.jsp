@@ -66,7 +66,7 @@
     
     <body>    
         
-	<form action="ATMController">
+	<form action="ATMController" method="POST">
         
             <h2> Abrir Conta do Cliente </h2>
             

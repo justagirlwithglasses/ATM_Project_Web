@@ -2,3 +2,5 @@
 <jboss-web>  
     <security-domain>other</security-domain>
 </jboss-web>
+
+<!-- Estabelece a conexão entre ATM_Project_Web e o subssistema de autenticação de Wildfly -->

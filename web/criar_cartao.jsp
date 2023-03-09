@@ -67,7 +67,7 @@
 
     <body>
         
-        <form action="ATMController">
+        <form action="ATMController" method="POST">
         
             <h2> Criar Cartão de Cliente </h2>
             
