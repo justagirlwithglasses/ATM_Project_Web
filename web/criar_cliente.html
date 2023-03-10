@@ -1,95 +1,115 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
-    
-    <head>
-        
-        <title> Criar Cliente Bootstrap</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <style>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Criar Cliente</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
             
-		body 
-                {
-			font-family: Arial, sans-serif;
-			background-color: #f4f4f4;
-		}
-
-		form 
-                {
-			background-color: #fff;
-			max-width: 500px;
-			margin: 20px auto;
-			padding: 20px;
-			box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-		}
-
-		label 
-                {
-			display: block;
-			margin-bottom: 8px;
-		}
-
-		input[type="text"],
-		input[type="email"],
-		input[type="password"] 
-                {
-			padding: 8px;
-			width: 100%;
-			border: 1px solid #ccc;
-			border-radius: 4px;
-			box-sizing: border-box;
-			margin-bottom: 20px;
-		}
-
-		button 
-                {
-			background-color: #4CAF50;
-			color: #fff;
-			padding: 8px 16px;
-			border: none;
-			border-radius: 4px;
-			cursor: pointer;
-		}
-
-		button:hover 
-                {
-			background-color: #45a049;
-		}
+            <div class="card-body p-0">
                 
-	</style>
-        
-    </head>
-    
-    <body>
-        
-        <form action="ATMController" method="POST">
+                <!-- Nested Row within Card Body -->
+                
+                <div class="row">
+                    
+                    <div class="col-lg-5 d-none d-lg-block bg-client-image"></div>
+                    
+                    <div class="col-lg-7">
+                        
+                        <div class="p-5">
+                            
+                            <div class="text-center">
+                                
+                                <h1 class="h4 text-gray-900 mb-4">Criar Cliente</h1>
+                                
+                            </div>
+                            
+                            <form class="user" action="ATMController" method="POST">
+                                
+                                <div class="form-group">
+                                                                   
+                                    <input type="text" class="form-control form-control-user" id="id" name="Id_cliente" maxlength="5" placeholder="Insira o ID" required>
+
+                                </div>
+                                
+                                <div class="form-group">
+                                    
+                                    <input type="text" class="form-control form-control-user" id="nome" name="nome" maxlength="50" placeholder="Insira o Nome" required>
+                                        
+                                 </div>
+                                    
+                                <div class="form-group">
+                                        
+                                        <input type="text" class="form-control form-control-user" id="nif" name="NIF" maxlength="9" placeholder="Insira o NIF" required>                                      
+                                    
+                                </div>
+                                
+                                <div class="form-group">
+                                    
+                                    <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Insira o Email" required>
+                                    
+                                </div>
+                                
+                                <div class="form-group">
+                                        
+                                    <input type="text" class="form-control form-control-user" id="profissao" name="profissao" maxlength="50" placeholder="Insira a Profissão" required>
+                                        
+                                </div>
+                                    
+                                <div class="form-group">
+                                        
+                                    <input type="password" class="form-control form-control-user" id="senha" name="senha" placeholder="Insira a Password" required>
+                                        
+                                </div>
+                                    
+                                    <button type="submit" class="btn btn-primary btn-user btn-block" name="servico" value="criar_cliente"> Criar Cliente </button>
+                                
+                            </form>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
             
-		<h2> Criar Cliente </h2>
-                
-		<label for="id"> ID: </label>
-		<input type="text" id="id" name="Id_cliente" placeholder="Insira o ID do Cliente" required>
-                
-		<label for="nome"> Nome: </label>
-		<input type="text" id="nome" name="nome" placeholder="Insira o Nome" required>
-                
-		<label for="nif"> NIF: </label>
-		<input type="text" id="nif" name="NIF" placeholder="Insira o NIF" required>
-                
-		<label for="email"> Email: </label>
-		<input type="email" id="email" name="email" placeholder="Insira o Email" required>
-                
-		<label for="profissao"> Profissão: </label>
-		<input type="text" id="profissao" name="profissao" placeholder="Insira a Profissão" required>
-                
-		<label for="senha"> Senha: </label>
-		<input type="password" id="senha" name="senha" placeholder="Insira a Password" required>
-                
-		<button type="submit" name="servico" value="criar_cliente"> Criar Cliente </button>
-                
-	</form>
-        
-    </body>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
 
 </html>

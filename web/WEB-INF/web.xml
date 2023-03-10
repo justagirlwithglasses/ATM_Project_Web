@@ -6,7 +6,7 @@
              version="4.0">
         
             <welcome-file-list>
-                <welcome-file>criar_cliente.html</welcome-file>
+                <welcome-file>index.html</welcome-file>
             </welcome-file-list>
 
             <servlet>
@@ -27,7 +27,8 @@
                 <auth-constraint>
                     <role-name>funcionario</role-name>
                 </auth-constraint>              
-                <web-resource-collection>            
+                <web-resource-collection>   
+                    <url-pattern>/index.html</url-pattern>       
                     <url-pattern>/criar_cliente.html</url-pattern>
                     <url-pattern>/abrir_conta.jsp</url-pattern>
                     <url-pattern>/criar_cartao.jsp</url-pattern>

@@ -68,7 +68,7 @@ public class ATMController extends HttpServlet
 
                 Conta novaconta = new Conta
                (
-                   Integer.parseInt(request.getParameter("num_conta")),
+                   request.getParameter("num_conta"),
                    Double.parseDouble(request.getParameter("saldo_conta")),
                    Conta.Tipo_Conta.valueOf(request.getParameter("tipo_conta"))
 
