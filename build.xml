@@ -72,11 +72,11 @@
     <!-- Deploy Automático em Wildfly -->
     
     <target name="-post-dist">
-        <!-- MS 
-        <copy file="./dist/ATM_Project_Web.war" todir=""/> -->
+        <!-- MS -->
+        <copy file="./dist/ATM_Project_Web.war" todir="C:\Users\1mafs\wildfly-26.1.3.Final\standalone\deployments"/> 
         
-         <!-- VM -->
-        <copy file="./dist/ATM_Project_Web.war" todir="C:\Users\Admin\wildfly-26.1.3.Final\standalone\deployments" />
+         <!-- VM 
+        <copy file="./dist/ATM_Project_Web.war" todir="C:\Users\Admin\wildfly-26.1.3.Final\standalone\deployments" />-->
     </target>
   
 </project>
